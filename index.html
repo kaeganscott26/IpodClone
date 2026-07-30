@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050707" />
+    <title>nano — your music, your way</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="stage">
+      <section class="ipod" aria-label="nano media player">
+        <div class="top-edge"></div>
+        <div class="display-bezel">
+          <div class="screen" id="screen">
+            <div class="statusbar">
+              <span class="status-title" id="statusTitle">iPod</span>
+              <span class="status-icons"><span id="trackPosition"></span><span class="battery"><i></i></span></span>
+            </div>
+
+            <section class="view active" id="homeView" aria-label="Main menu">
+              <div class="menu-list main-menu" id="mainMenu">
+                <button class="menu-item selected" data-action="music"><span>Music</span><b>›</b></button>
+                <button class="menu-item" data-action="videos"><span>Videos</span><b>›</b></button>
+                <button class="menu-item" data-action="now"><span>Now Playing</span><b>›</b></button>
+                <button class="menu-item" data-action="import"><span>Import Media</span><b>›</b></button>
+                <button class="menu-item" data-action="settings"><span>Settings</span><b>›</b></button>
+              </div>
+              <div class="home-art"><div class="art-disc"></div><span>nano</span></div>
+              <p class="home-hint" id="libraryCount">No songs or videos</p>
+            </section>
+
+            <section class="view" id="libraryView" aria-label="Media library">
+              <div class="view-heading"><span id="libraryTitle">Music</span><span id="libraryNumber">0</span></div>
+              <div class="track-list" id="trackList"></div>
+              <div class="empty-library" id="emptyLibrary">
+                <div class="note-icon">♫</div>
+                <strong>Your library is empty</strong>
+                <span>Use Import Media to add files</span>
+              </div>
+            </section>
+
+            <section class="view" id="nowView" aria-label="Now playing">
+              <div class="playing-header"><span>Now Playing</span><span class="playing-mode" id="mediaKind">MUSIC</span></div>
+              <div class="album-art" id="albumArt"><span class="album-initial">♫</span><div class="art-shine"></div></div>
+              <div class="track-detail">
+                <strong id="nowTitle">Nothing playing</strong>
+                <span id="nowArtist">Import a song or video</span>
+              </div>
+              <div class="progress-wrap" id="progressWrap" role="slider" aria-label="Playback position" tabindex="0">
+                <span id="elapsed">0:00</span><div class="progress-line"><i id="progressFill"></i><b id="progressKnob"></b></div><span id="duration">0:00</span>
+              </div>
+              <div class="volume-row"><span>◖</span><div class="volume-line"><i id="volumeFill"></i></div><span>◗</span></div>
+            </section>
+
+            <section class="view" id="settingsView" aria-label="Settings">
+              <div class="view-heading"><span>Settings</span></div>
+              <div class="settings-list">
+                <button class="setting-row" id="shuffleToggle"><span>Shuffle</span><b>Off</b></button>
+                <button class="setting-row" id="repeatToggle"><span>Repeat</span><b>Off</b></button>
+                <button class="setting-row" id="clearLibrary"><span>Reset Library</span><b>›</b></button>
+              </div>
+              <p class="settings-note">Your files stay on this device only.</p>
+            </section>
+
+            <section class="view import-view" id="importView" aria-label="Import media">
+              <div class="view-heading"><span>Import Media</span></div>
+              <label class="dropzone" id="dropzone" for="fileInput">
+                <span class="upload-symbol">⇧</span>
+                <strong>Drop files here</strong>
+                <span>or click to browse</span>
+                <small>Audio &amp; video files</small>
+              </label>
+              <input id="fileInput" type="file" multiple accept="audio/*,video/*,.mp3,.m4a,.wav,.aac,.ogg,.flac,.mp4,.m4v,.mov,.webm,.avi,.mkv" />
+              <p class="import-status" id="importStatus">Files are not uploaded anywhere.</p>
+            </section>
+
+            <div class="toast" id="toast" role="status"></div>
+          </div>
+        </div>
+
+        <div class="wheel" id="wheel" aria-label="Click wheel controls">
+          <button class="wheel-zone menu-zone" id="menuButton" aria-label="Menu">MENU</button>
+          <button class="wheel-zone prev-zone" id="previousButton" aria-label="Previous track">‹‹</button>
+          <button class="wheel-zone next-zone" id="nextButton" aria-label="Next track">››</button>
+          <button class="wheel-zone play-zone" id="playButton" aria-label="Play or pause"><span id="playIcon">▶❚❚</span></button>
+          <button class="select-button" id="selectButton" aria-label="Select"><span id="selectLabel"></span></button>
+        </div>
+        <p class="wheel-help">Use the wheel or your keyboard</p>
+      </section>
+      <p class="footer-copy">Designed for your personal media collection</p>
+    </main>
+    <audio id="audioPlayer" preload="metadata"></audio>
+    <video id="videoPlayer" preload="metadata" playsinline></video>
+    <script src="app.js"></script>
+  </body>
+</html>

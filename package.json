@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "build": "^0.1.4",
+    "dev": "^0.1.5",
+    "install": "^0.13.0",
+    "lint": "^1.2.2",
+    "node-gyp": "^13.0.1",
+    "nodejs": "^0.0.0",
+    "npm": "^10.9.9",
+    "rebuild": "^0.1.2",
+    "run": "^2.0.0"
+  },
+  "allowScripts": {
+    "inotify@1.4.6": true
+  }
+}

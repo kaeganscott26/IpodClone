@@ -11,6 +11,6 @@
     "run": "^2.0.0"
   },
   "allowScripts": {
-    "inotify@1.4.6": true
+    "inotify@1.4.6": false
   }
 }

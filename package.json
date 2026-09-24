@@ -1,13 +1,30 @@
 {
+  "name": "ipodclone",
+  "version": "1.0.0",
+  "description": "",
   "dependencies": {
-    "build": "^0.1.4",
-    "dev": "^0.1.5",
-    "install": "^0.13.0",
-    "lint": "^1.2.2",
-    "node-gyp": "^13.0.1",
-    "nodejs": "^0.0.0",
-    "npm": "^12.0.2",
-    "rebuild": "^0.1.2",
-    "run": "^2.0.0"
-  }
+    "react": "latest",
+    "react-dom": "latest"
+},
+  "devDependencies": {
+    "prettier": "^3.9.9",
+    "vite": "latest",
+    "@vitejs/plugin-react-swc": "4.3.3"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "Preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaeganscott26/IpodClone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaeganscott26/IpodClone/issues"
+  },
+  "homepage": "https://github.com/kaeganscott26/IpodClone#readme"
 }
